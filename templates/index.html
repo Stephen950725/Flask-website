@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>台中必吃美食推薦</h2>
+<ul class="food-list">
+    {% for food in foods %}
+    <li>
+        <a href="{{ url_for('detail', food_id=food.id) }}">
+            <img src="{{ url_for('static', filename=food.image) }}" alt="{{ food.name }}">
+            <div>
+                <strong>{{ food.name }}</strong>（{{ food.category }}）<br>
+                <span>{{ food.description }}</span><br>
+                <span>地點：{{ food.location }}　評分：{{ food.rating }}</span>
+            </div>
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
+
+

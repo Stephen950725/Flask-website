@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ food.name }}</h2>
+<img src="{{ url_for('static', filename=food.image) }}" alt="{{ food.name }}" class="detail-img">
+<ul>
+    <li><strong>分類：</strong>{{ food.category }}</li>
+    <li><strong>簡介：</strong>{{ food.description }}</li>
+    <li><strong>地點：</strong>{{ food.location }}</li>
+    <li><strong>地址：</strong>{{ food.address }}</li>
+    <li><strong>電話：</strong>{{ food.phone }}</li>
+    <li><strong>價格：</strong>{{ food.price }}</li>
+    <li><strong>評分：</strong>{{ food.rating }}</li>
+    <li><strong>特色：</strong>{{ food.features | join('、') }}</li>
+</ul>
+<a href="/">回到美食列表</a>
+{% endblock %}
+
